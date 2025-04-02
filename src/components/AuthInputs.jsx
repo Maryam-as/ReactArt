@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { styled } from "styled-components";
+import Button from "./Button.jsx";
 
 // create a styled div container for form controls
 const ControlContainer = styled.div`
@@ -28,21 +29,6 @@ const Input = styled.input`
   border: 1px solid ${({ $invalid }) => ($invalid ? "#f73f3f" : "transparent")};
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-`;
-// create a styled Button component and apply a pseudo-class (hover) with Styled Components
-const Button = styled.button`
-  padding: 1rem 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 0.25rem;
-  color: #1f2937;
-  background-color: #f0b322;
-  border-radius: 6px;
-  border: none;
-
-  &:hover {
-    background-color: #f0920e;
-  }
 `;
 
 export default function AuthInputs() {
