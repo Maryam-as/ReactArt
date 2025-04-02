@@ -16,7 +16,7 @@ const Label = styled.label`
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: ${(props) => (props.invalid ? "#f87171" : "#6b7280")};
 `;
 // create a styled input component using Styled Components and tagged templates
 const Input = styled.input`
@@ -54,10 +54,8 @@ export default function AuthInputs() {
     <div id="auth-inputs">
       <ControlContainer>
         <p>
-          {/* dynamically setting the className for the label element based on the email validation status. */}
-          <Label className={`label ${emailNotValid ? "invalid" : ""}`}>
-            Email
-          </Label>
+          {/* dynamically setting the "invalid" prop based on the "emailNotValid" value using Styled Components */}
+          <Label invalid={emailNotValid}>Email</Label>
           <Input
             type="email"
             className={emailNotValid ? "invalid" : undefined}
@@ -65,9 +63,7 @@ export default function AuthInputs() {
           />
         </p>
         <p>
-          <Label className={`label ${passwordNotValid ? "invalid" : ""}`}>
-            Password
-          </Label>
+          <Label invalid={passwordNotValid}>Password</Label>
           <Input
             type="password"
             className={passwordNotValid ? "invalid" : undefined}
