@@ -8,7 +8,6 @@ const ControlContainer = styled.div`
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 `;
-
 // create a styled label component using Styled Components and tagged templates
 const Label = styled.label`
   display: block;
@@ -18,6 +17,17 @@ const Label = styled.label`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #6b7280;
+`;
+// create a styled input component using Styled Components and tagged templates
+const Input = styled.input`
+  width: 100%;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+  background-color: #d1d5db;
+  color: #374151;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
 
 export default function AuthInputs() {
@@ -48,7 +58,7 @@ export default function AuthInputs() {
           <Label className={`label ${emailNotValid ? "invalid" : ""}`}>
             Email
           </Label>
-          <input
+          <Input
             type="email"
             className={emailNotValid ? "invalid" : undefined}
             onChange={(event) => handleInputChange("email", event.target.value)}
@@ -58,7 +68,7 @@ export default function AuthInputs() {
           <Label className={`label ${passwordNotValid ? "invalid" : ""}`}>
             Password
           </Label>
-          <input
+          <Input
             type="password"
             className={passwordNotValid ? "invalid" : undefined}
             onChange={(event) =>
